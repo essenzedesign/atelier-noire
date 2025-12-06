@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atelier Noire | Mobilier de Lux la Comandă</title>
+
+    <style>
+
+        /* RESET & VARIABILE */
+
+        :root {
+
+            --negru: #1a1a1a;
+
+            --auriu: #c9a96e;
+
+            --gri-deschis: #f5f5f5;
+
+            --gri-mediu: #e0e0e0;
+
+            --alb: #ffffff;
+
+        }
+
+        
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        
+
+        body {
+
+            background-color: var(--alb);
+
+            color: var(--negru);
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        /* NAVBAR */
+
+        .navbar {
+
+            background: var(--negru);
+
+            padding: 1rem 5%;
+
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        
+
+        .logo {
+
+            color: var(--auriu);
+
+            font-size: 1.8rem;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+        }
+
+        
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 2rem;
+
+        }
+
+        
+
+        .nav-links a {
+
+            color: var(--alb);
+
+            text-decoration: none;
+
+            transition: color 0.3s;
+
+        }
+
+        
+
+        .nav-links a:hover {
+
+            color: var(--auriu);
+
+        }
+
+        
+
+        /* HERO SECTION */
+
+        .hero {
+
+            height: 100vh;
+
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+
+                        url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3') center/cover;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: var(--alb);
+
+            padding: 0 1rem;
+
+        }
+
+        
+
+        .hero-content h1 {
+
+            font-size: 3.5rem;
+
+            margin-bottom: 1rem;
+
+            color: var(--auriu);
+
+        }
+
+        
+
+        .hero-content p {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 2rem;
+
+            max-width: 600px;
+
+        }
+
+        
+
+        .cta-button {
+
+            background: var(--auriu);
+
+            color: var(--negru);
+
+            padding: 12px 30px;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+
+            transition: background 0.3s;
+
+        }
+
+        
+
+        .cta-button:hover {
+
+            background: #b8975a;
+
+        }
+
+        
+
+        /* SECTIUNI GENERALE */
+
+        .section {
+
+            padding: 5rem 5%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+            color: var(--negru);
+
+        }
+
+        
+
+        .section-title h2 {
+
+            font-size: 2.5rem;
+
+            color: var(--auriu);
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        /* MATERIALE */
+
+        .materiale-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 2rem;
+
+            margin-top: 2rem;
+
+        }
+
+        
+
+        .material-card {
+
+            background: var(--gri-deschis);
+
+            padding: 2rem;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            transition: transform 0.3s;
+
+        }
+
+        
+
+        .material-card:hover {
+
+            transform: translateY(-5px);
+
+        }
+
+        
+
+        .material-icon {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        /* GALERIE */
+
+        .galerie-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 1rem;
+
+            margin-top: 2rem;
+
+        }
+
+        
+
+        .galerie-item {
+
+            height: 300px;
+
+            background: var(--gri-mediu);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+        
+
+        .galerie-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.3s;
+
+        }
+
+        
+
+        .galerie-item:hover img {
+
+            transform: scale(1.05);
+
+        }
+
+        
+
+        /* PROCES */
+
+        .proces-steps {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2rem;
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .step {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 2rem;
+
+            background: var(--gri-deschis);
+
+            padding: 2rem;
+
+            border-radius: 10px;
+
+        }
+
+        
+
+        .step-number {
+
+            background: var(--auriu);
+
+            color: var(--negru);
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 1.5rem;
+
+            font-weight: bold;
+
+        }
+
+        
+
+        /* CONTACT */
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 3rem;
+
+            margin-top: 2rem;
+
+        }
+
+        
+
+        .contact-form input,
+
+        .contact-form textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin-bottom: 1rem;
+
+            border: 1px solid var(--gri-mediu);
+
+            border-radius: 5px;
+
+        }
+
+        
+
+        .contact-form button {
+
+            background: var(--auriu);
+
+            color: var(--negru);
+
+            padding: 12px 30px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+        
+
+        .contact-info {
+
+            background: var(--gri-deschis);
+
+            padding: 2rem;
+
+            border-radius: 10px;
+
+        }
+
+        
+
+        /* FOOTER */
+
+        footer {
+
+            background: var(--negru);
+
+            color: var(--alb);
+
+            text-align: center;
+
+            padding: 2rem;
+
+            margin-top: 5rem;
+
+        }
+
+        
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+            
+
+            .hero-content h1 {
+
+                font-size: 2.5rem;
+
+            }
+
+            
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            
+
+            .step {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="#" class="logo">ATELIER NOIRE</a>
+
+        <div class="nav-links">
+
+            <a href="#acasa">Acasă</a>
+
+            <a href="#despre">Despre Noi</a>
+
+            <a href="#materiale">Materiale</a>
+
+            <a href="#galerie">Galerie</a>
+
+            <a href="#proces">Proces</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="acasa">
+
+        <div class="hero-content">
+
+            <h1>ATELIER NOIRE</h1>
+
+            <p>Mobilier de lux la comandă. Transformăm visul tău în realitate prin mestereagă tradițională și design contemporan.</p>
+
+            <a href="#contact" class="cta-button">Comandă Consultație Gratuită</a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DESPRE NOI -->
+
+    <section class="section" id="despre">
+
+        <div class="section-title">
+
+            <h2>Despre Noi</h2>
+
+            <p>Excelență în mobilier personalizat</p>
+
+        </div>
+
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+
+            <p>Cu o pasiune pentru lemn și atenție la detalii, creăm piese unice care reflectă personalitatea și stilul fiecărui client. Fiecare proiect este o colaborare între visul tău și expertiza noastră.</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MATERIALE -->
+
+    <section class="section" id="materiale" style="background: var(--gri-deschis);">
+
+        <div class="section-title">
+
+            <h2>Materiale Premium</h2>
+
+            <p>Calitate excepțională pentru rezultate extraordinare</p>
+
+        </div>
+
+        <div class="materiale-grid">
+
+            <div class="material-card">
+
+                <div class="material-icon">🌳</div>
+
+                <h3>MDF Vopsit</h3>
+
+                <p>Finisaje perfecte și durabile în orice nuanță</p>
+
+            </div>
+
+            <div class="material-card">
+
+                <div class="material-icon">✨</div>
+
+                <h3>MDF Furniruit</h3>
+
+                <p>Eleganță naturală cu texturi autentice</p>
+
+            </div>
+
+            <div class="material-card">
+
+                <div class="material-icon">🌀</div>
+
+                <h3>MDF Curbat</h3>
+
+                <p>Designuri organice și forme fluide</p>
+
+            </div>
+
+            <div class="material-card">
+
+                <div class="material-icon">🪵</div>
+
+                <h3>Lemn Masiv</h3>
+
+                <p>Autenticitate și longevitate de excepție</p>
+
+            </div>
+
+            <div class="material-card">
+
+                <div class="material-icon">🔲</div>
+
+                <h3>Placaj</h3>
+
+                <p>Stabilitate și versatilitate în design</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- GALERIE -->
+
+    <section class="section" id="galerie">
+
+        <div class="section-title">
+
+            <h2>Galerie Proiecte</h2>
+
+            <p>Mostre din creațiile noastre</p>
+
+        </div>
+
+        <div class="galerie-grid">
+
+            <div class="galerie-item">
+
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3" alt="Dulap de lux">
+
+            </div>
+
+            <div class="galerie-item">
